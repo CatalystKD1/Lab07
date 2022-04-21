@@ -9,8 +9,8 @@ def getInt(message):
   return temp
   
 def getStr(message):
-  temp = input(message)
   while(True):
+    temp = input(message)
     try:
       temp = int(temp)
       print("That is not the proper value.")
@@ -31,7 +31,7 @@ def main():
     '''////////////////////////////////////////////////////////////////'''
     if s > length and i <= 0:
       print("Sorry pal, "+ str(s) + " is greater then " + str(length) +"or, " + str(i) + " is lesser then 0.")
-    elif s < length and i >=0:
+    elif s <= length and i >=0:
       splicer(word, i, s)
       break
       
