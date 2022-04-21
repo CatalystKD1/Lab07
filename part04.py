@@ -29,6 +29,7 @@ def box(loop, anem):
 
 name = getStr("What name would you like to become a abomination? ")
 box(0, name)
+# For some reason making a main crashed my system so this part will have to do without it.
 
 #Don't steal :(
   
