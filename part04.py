@@ -9,7 +9,7 @@ def getStr(message):
       break
   return temp
   
-def box(loop, anem):
+def box(loop, name):
   # starts at 0
   length = len(name)
   for i in range(loop, length, 1):
@@ -26,10 +26,12 @@ def box(loop, anem):
   else:
     print("")
     box(loop, name)
+    
+def main():
+  name = getStr("What name would you like to become a abomination? ")
+  box(0, name)
+main()
 
-name = getStr("What name would you like to become a abomination? ")
-box(0, name)
-# For some reason making a main crashed my system so this part will have to do without it.
 
 #Don't steal :(
   
