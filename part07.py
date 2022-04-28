@@ -31,29 +31,26 @@ def cipher(lower, other, encrypted, sentence, move):
     elif letter in other:
       pos = other.find(letter)
       encrypted = encrypted + other[pos]
-  print("The sentence you want to encrypt is:")
-  print(encrypted)
-  
-def decipher(lower, other, encrypted, sentence, move):
-  for letter in sentence:
-    if letter in lower:
-      pos = lower.find(letter)
-      encrypted = encrypted + lower[(pos - move) % len(lower)]
-      '''len(lower)'''
-    elif letter in other:
-      pos = other.find(letter)
-      encrypted = encrypted + other[pos]
-  print("The sentence you want to decrypt is:")
+  print("Here is your sentence:")
   print(encrypted)
 
 def caesar(lower, other, encrypted):
   print("User manual: DECRYPTING: Automatically moves back. Do not enter a negative.")
+  print()
   sentence = getStr("What sentence would you like to encrypt/decrypt? ")
   move = getInt("How many position would you like to shift it by? ")
   choice = getStr("Would you like to encrypt or decrypt? Write 'encrypt' or 'decrypt' ")
-  if(choice == "encrypt"):
-    cipher(lower, other, encrypted, sentence, move)
-  elif(choice == "decrypt"):
-    decipher(lower, other, encrypted, sentence, move)
+  print()
+  while(True):
+    if(choice == "encrypt"):
+      cipher(lower, other, encrypted, sentence, move)
+      break
+    elif(choice == "decrypt"):
+      move = -move
+      cipher(lower, other, encrypted, sentence, move)
+      break
+    else:
+      print("That is not an option. Sorry...")
+      print()
   
 caesar("abcdefghijklmnopqrstuvwxyz", " ,.?!@#$%^&*()-_+1234567890", "")
